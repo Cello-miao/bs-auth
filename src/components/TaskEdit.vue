@@ -4,7 +4,7 @@
     <div v-if="task">
       <div class="field"><label>Title</label><input v-model="task.title" /></div>
       <div class="field"><label>Description</label><textarea v-model="task.description"></textarea></div>
-      <div class="field"><label>Status</label><select v-model="task.status"><option>todo</option><option>in_progress</option><option>done</option></select></div>
+      <!-- <div class="field"><label>Status</label><select v-model="task.status"><option>todo</option><option>in_progress</option><option>done</option></select></div> -->
       <div class="field"><label>Skills</label>
         <select v-model="selectedSkill">
           <option v-for="s in allSkills" :key="s.id" :value="s.id">{{ s.name }}</option>

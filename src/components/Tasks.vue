@@ -10,7 +10,7 @@
 
     <table class="tasks-table">
       <thead>
-        <tr><th>ID</th><th>Title</th><th>Description</th><th>Status</th><th>Actions</th></tr>
+        <tr><th>ID</th><th>Title</th><th>Description</th><th>Actions</th></tr>
       </thead>
       <tbody>
         <tr v-for="t in tasks" :key="t.id">
@@ -31,7 +31,7 @@
               {{ t.description }}
             </div>
           </td>
-          <td>
+          <!-- <td>
             <div v-if="editingId === t.id">
               <select v-model="drafts[t.id].status">
                 <option>todo</option>
@@ -42,7 +42,7 @@
             <div v-else>
               {{ t.status }}
             </div>
-          </td>
+          </td> -->
           <td>
             <div v-if="editingId === t.id">
               <button type="button" @click="saveEdit(t.id)">Save</button>
@@ -51,8 +51,8 @@
             <div v-else>
               <button type="button" @click="startEdit(t)">Edit</button>
               <button type="button" @click="deleteTask(t.id)">Delete</button>
-              <button type="button" v-if="isAuth" @click="assign(t.id)">Assign to me</button>
-              <button type="button" v-if="isAuth" @click="withdraw(t.id)">Withdraw</button>
+              <!-- <button type="button" v-if="isAuth" @click="assign(t.id)">Assign to me</button>
+              <button type="button" v-if="isAuth" @click="withdraw(t.id)">Withdraw</button> -->
             </div>
           </td>
         </tr>
@@ -139,6 +139,12 @@ export default {
 <style scoped>
 .card{padding:18px}
 .form { display:flex; gap:8px; margin-bottom:12px }
+.form input, .form select, .tasks-table input { height:44px; padding:8px 12px; border-radius:8px; border:1px solid #d7e0ef }
+.form input:focus, .form select:focus, .tasks-table input:focus { box-shadow: 0 4px 14px rgba(110,140,255,0.12); border-color: #7aa0ff; outline: none }
+.btn-primary { margin-top:0; height:46px; border:none; border-radius:10px; background:linear-gradient(90deg,#4b6bff,#6ad0ff); color:#fff; font-weight:600; cursor: pointer; box-shadow: 0 6px 20px rgba(75,107,255,0.18); transition: transform .08s ease, box-shadow .12s ease; }
+.btn-primary:active { transform: translateY(1px); }
+.btn-primary:hover { box-shadow: 0 10px 28px rgba(75,107,255,0.22); }
 .tasks-table { width:100%; border-collapse:collapse }
 .tasks-table th, .tasks-table td { border:1px solid #eee; padding:8px; text-align:left }
+.tasks-table button { padding:6px 8px; border-radius:8px; border:1px solid #e6e9ef; background:#fff; cursor:pointer }
 </style>

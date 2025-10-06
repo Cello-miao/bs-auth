@@ -94,6 +94,12 @@ export default {
 
 <style scoped>
 .card { padding:18px; border-radius:10px; background:#fff }
+.form input, .form select, .skills-table input { height:44px; padding:8px 12px; border-radius:8px; border:1px solid #d7e0ef }
+.form input:focus, .form select:focus, .skills-table input:focus { box-shadow: 0 4px 14px rgba(110,140,255,0.12); border-color: #7aa0ff; outline: none }
+.btn-primary { margin-top:0; height:46px; border:none; border-radius:10px; background:linear-gradient(90deg,#4b6bff,#6ad0ff); color:#fff; font-weight:600; cursor: pointer; box-shadow: 0 6px 20px rgba(75,107,255,0.18); transition: transform .08s ease, box-shadow .12s ease; }
+.btn-primary:active { transform: translateY(1px); }
+.btn-primary:hover { box-shadow: 0 10px 28px rgba(75,107,255,0.22); }
 .skills-table { width:100%; border-collapse:collapse }
 .skills-table th, .skills-table td { border:1px solid #eee; padding:8px; text-align:left }
+.skills-table button { padding:6px 8px; border-radius:8px; border:1px solid #e6e9ef; background:#fff; cursor:pointer }
 </style>
