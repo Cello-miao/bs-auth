@@ -1,8 +1,12 @@
 import axios from 'axios'
 
-// Backend API base URL — adjust host/port if your API runs elsewhere
+// Configure baseURL so the dev proxy in vite.config.js can forward /api
+// requests to the backend and avoid CORS during development. You can set
+// VITE_API_URL to override the URL in different environments.
+const baseURL = import.meta.env.VITE_API_URL || '/api'
+
 const api = axios.create({
-  baseURL: 'http://localhost:4000/api',
+  baseURL,
   withCredentials: true, // ensure HttpOnly cookies (if any) are sent
   headers: {
     'Content-Type': 'application/json'
